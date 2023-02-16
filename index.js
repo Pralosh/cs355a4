@@ -10,8 +10,7 @@ app.use(express.static('public'));
 //hits route
 var hits = 0;
 app.get('/hits', (req,res) => {
-    hits++;
-    res.send(''+hits);
+    res.contentType('text/plain').send((++hits).toString());
 })
 
 //root route
